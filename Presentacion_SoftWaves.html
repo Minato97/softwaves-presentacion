@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoftWaves — Plan de Negocios · Expo-Emprende 2026A</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ══ THEME VARIABLES ══ */
+[data-theme="dark"] {
+  --bg:      #020b1a;
+  --bg2:     #04142e;
+  --bg3:     #071a3a;
+  --card:    rgba(255,255,255,0.04);
+  --border:  rgba(255,255,255,0.08);
+  --text:    #ffffff;
+  --textS:   #a0aec0;
+  --textM:   rgba(255,255,255,0.75);
+  --inv:     rgba(0,0,0,0.4);
+}
+[data-theme="light"] {
+  --bg:      #f0f4ff;
+  --bg2:     #e4ecff;
+  --bg3:     #d8e4ff;
+  --card:    rgba(1,75,160,0.05);
+  --border:  rgba(1,75,160,0.15);
+  --text:    #04142e;
+  --textS:   #4a5568;
+  --textM:   #2d3748;
+  --inv:     rgba(255,255,255,0.6);
+}
+:root {
+  --blue:    #014ba0;
+  --blue2:   #1466c3;
+  --blueL:   #5275c8;
+  --purple:  #7f00b2;
+  --purpleL: #a21ad7;
+  --yellow:  #ffff6a;
+  --green:   #22c55e;
+  --red:     #ef4444;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.reveal-viewport { background: var(--bg) !important; }
+.reveal .slides { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+.reveal .slides section {
+  width: 100%; height: 100%; padding: 0;
+  top: 0 !important; left: 0 !important;
+  display: flex !important; align-items: stretch; overflow: hidden;
+}
+
+/* ══ SLIDE BASE ══ */
+.slide {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  background: var(--bg); color: var(--text);
+  transition: background 0.4s, color 0.4s;
+}
+.slide::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--yellow));
+  z-index: 10;
+}
+.snum {
+  position: absolute; bottom: 18px; right: 28px;
+  font-size: 10px; font-weight: 700; color: var(--textS);
+  letter-spacing: 2px; z-index: 10; opacity: 0.5;
+}
+
+/* ══ LAYOUT HELPERS ══ */
+.split { flex-direction: row; }
+.sl { display: flex; flex-direction: column; justify-content: center; padding: 52px 48px; position: relative; overflow: hidden; }
+.sl.w42 { width: 42%; }
+.sl.w38 { width: 38%; }
+.sl.w35 { width: 35%; }
+.sl.blue-bg  { background: var(--blue); }
+.sl.purple-bg{ background: var(--purple); }
+.sl.dark-bg  { background: var(--bg2); }
+.sl.grad-bg  { background: linear-gradient(160deg, var(--blue) 0%, var(--bg2) 100%); }
+.sl::after { content:''; position:absolute; width:250px; height:250px; border-radius:50%; background:rgba(0,0,0,.1); bottom:-70px; right:-70px; }
+.sr { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 52px 52px; }
+.full { flex-direction: column; justify-content: center; padding: 44px 68px; }
+.center-s { flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 44px 80px; }
+
+/* ══ TYPOGRAPHY ══ */
+.tag {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--yellow);
+  margin-bottom: 12px; opacity: 0.9;
+}
+.tag.gray { color: var(--textS); }
+.h0 { font-size: 68px; font-weight: 900; line-height: 1; letter-spacing: -2px; }
+.h1 { font-size: 46px; font-weight: 900; line-height: 1.05; letter-spacing: -1.5px; }
+.h1 span, .h0 span { color: var(--yellow); }
+.h2 { font-size: 30px; font-weight: 800; line-height: 1.15; }
+.h3 { font-size: 20px; font-weight: 700; }
+.body { font-size: 14px; line-height: 1.75; color: var(--textM); margin-top: 12px; }
+.body-sm { font-size: 12.5px; line-height: 1.65; color: var(--textS); margin-top: 8px; }
+.accent { color: var(--yellow); }
+.blue-t { color: var(--blue2); }
+.purple-t { color: var(--purpleL); }
+.white-t { color: #fff; }
+
+/* ══ DECORATIVE ══ */
+.yline { width: 52px; height: 4px; background: var(--yellow); border-radius: 2px; margin: 14px 0 20px; }
+.yline.center { margin: 14px auto 20px; }
+.geo-circle {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+/* ══ CARDS ══ */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px 24px; position: relative; overflow: hidden;
+}
+.card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--blue); }
+.card.p::before { background: var(--purple); }
+.card.y::before { background: var(--yellow); }
+.card .ci { font-size: 28px; margin-bottom: 10px; }
+.card h3 { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+.card p  { font-size: 12.5px; color: var(--textS); line-height: 1.6; }
+
+/* ══ STAT BLOCKS ══ */
+.stat-row { display: flex; gap: 20px; margin-top: 28px; }
+.stat {
+  flex: 1; background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 24px 20px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.stat::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--yellow); }
+.stat .big { font-size: 42px; font-weight: 900; color: var(--yellow); letter-spacing: -1px; line-height: 1; margin-bottom: 8px; }
+.stat .lbl { font-size: 12px; color: var(--textS); line-height: 1.5; }
+
+/* ══ LISTS ══ */
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px; line-height: 1.55; color: var(--textM); }
+.check-list li::before { content: '▶'; color: var(--yellow); font-size: 10px; flex-shrink: 0; margin-top: 3px; }
+.num-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.num-list li { display: flex; gap: 16px; align-items: flex-start; }
+.num-list .n { font-size: 28px; font-weight: 900; color: var(--yellow); opacity: 0.4; width: 36px; flex-shrink: 0; line-height: 1; }
+.num-list .txt h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.num-list .txt p  { font-size: 12px; color: var(--textS); line-height: 1.5; }
+
+/* ══ TABLES ══ */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl thead th { background: var(--blue); color: #fff; padding: 11px 16px; font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-align: left; }
+.tbl tbody td { padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--textM); }
+.tbl tbody tr:nth-child(even) td { background: var(--card); }
+.tbl .pill { display: inline-block; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+.pill-b { background: rgba(1,75,160,.25); border: 1px solid var(--blue2); color: var(--blueL); }
+.pill-p { background: rgba(127,0,178,.25); border: 1px solid var(--purpleL); color: var(--purpleL); }
+.pill-y { background: rgba(255,255,106,.15); border: 1px solid var(--yellow); color: var(--yellow); }
+.pill-g { background: rgba(34,197,94,.15); border: 1px solid var(--green); color: var(--green); }
+.pill-r { background: rgba(239,68,68,.15); border: 1px solid var(--red); color: var(--red); }
+
+/* ══ PORTER TABLE ══ */
+.porter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
+.porter-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start;
+}
+.porter-card .force-label { min-width: 44px; }
+.force-bar-wrap { flex: 1; }
+.force-bar-wrap .fn { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.force-bar-wrap .fl { font-size: 11px; color: var(--textS); margin-bottom: 8px; }
+.force-bar { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
+.force-fill { height: 100%; border-radius: 4px; }
+.force-alta   { background: linear-gradient(90deg, #ef4444, #f97316); }
+.force-media  { background: linear-gradient(90deg, #f59e0b, #eab308); }
+.force-baja   { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.force-tag { display: inline-block; font-size: 10px; font-weight: 800; margin-top: 6px; padding: 2px 8px; border-radius: 10px; }
+.ft-alta   { background: rgba(239,68,68,.2); color: #ef4444; }
+.ft-media  { background: rgba(245,158,11,.2); color: #f59e0b; }
+.ft-baja   { background: rgba(34,197,94,.2); color: #22c55e; }
+
+/* ══ CANVAS ══ */
+.canvas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px; margin-top: 8px; flex: 1;
+}
+.cv {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 14px; overflow: hidden;
+}
+.cv.span2 { grid-row: 1 / 3; }
+.cv.cost  { grid-column: 1 / 3; }
+.cv.rev   { grid-column: 4 / 6; }
+.cv h5 { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--yellow); margin-bottom: 8px; }
+.cv ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.cv ul li { font-size: 11px; color: var(--textM); display: flex; gap: 6px; align-items: flex-start; line-height: 1.4; }
+.cv ul li::before { content: '•'; color: var(--yellow); flex-shrink: 0; }
+.cv.blue-cv  { border-top: 3px solid var(--blue); }
+.cv.purple-cv{ border-top: 3px solid var(--purple); }
+.cv.yellow-cv{ border-top: 3px solid var(--yellow); }
+.cv.green-cv { border-top: 3px solid var(--green); }
+
+/* ══ ROADMAP ══ */
+.rm { display: flex; gap: 0; margin-top: 36px; position: relative; }
+.rm::before { content:''; position:absolute; top:34px; left:8%; right:8%; height:2px; background:var(--border); }
+.rc { flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 14px; }
+.rd { width:68px; height:68px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:900; margin-bottom:16px; position:relative; z-index:1; }
+.rd-done   { background:var(--blue); box-shadow:0 0 0 4px rgba(1,75,160,.25); }
+.rd-active { background:var(--purple); box-shadow:0 0 20px rgba(127,0,178,.5); }
+.rd-next   { background:var(--card); border:2px dashed var(--border); color:var(--textS); }
+.rc h3 { font-size:15px; font-weight:800; color:var(--yellow); margin-bottom:3px; }
+.rc .ry { font-size:11px; color:var(--textS); margin-bottom:10px; font-weight:700; }
+.rc p { font-size:12px; color:var(--textS); line-height:1.6; }
+
+/* ══ BARS ══ */
+.bar-item { margin-bottom: 16px; }
+.bar-label { display:flex; justify-content:space-between; margin-bottom:6px; }
+.bar-label .yl { font-size:13px; font-weight:600; color:var(--text); }
+.bar-label .vl { font-size:13px; font-weight:800; color:var(--yellow); }
+.bar-track { height:10px; background:var(--border); border-radius:5px; overflow:hidden; }
+.bar-fill  { height:100%; border-radius:5px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+.bf-b  { background:linear-gradient(90deg,var(--blue),var(--blue2)); }
+.bf-p  { background:linear-gradient(90deg,var(--purple),var(--purpleL)); }
+.bf-y  { background:linear-gradient(90deg,#b8b800,var(--yellow)); }
+.bf-g  { background:linear-gradient(90deg,#16a34a,var(--green)); }
+
+/* ══ TEAM ══ */
+.team-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
+.tc { background:var(--card); border:1px solid var(--border); border-radius:13px; padding:20px 22px; display:flex; gap:14px; align-items:flex-start; }
+.av { width:50px; height:50px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:900; color:#fff; flex-shrink:0; overflow:hidden; }
+.av img { width:100%; height:100%; object-fit:cover; }
+.avb{background:var(--blue);} .avp{background:var(--purple);} .avb2{background:var(--blue2);} .avn{background:#1b004b;border:1px solid rgba(127,0,178,.4);}
+.tc .n { font-size:13px; font-weight:800; margin-bottom:2px; }
+.tc .r { font-size:11px; font-weight:700; color:var(--yellow); margin-bottom:5px; }
+.tc .e { font-size:11px; color:var(--textS); line-height:1.5; }
+.tc .tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:7px; }
+.skill-tag { font-size:10px; font-weight:600; padding:2px 8px; border-radius:10px; background:var(--card); border:1px solid var(--border); color:var(--textM); }
+
+/* ══ COVER SPECIFIC ══ */
+.cover { justify-content:center; align-items:center; text-align:center; background:var(--bg); }
+.geo1 { width:400px; height:400px; top:-100px; right:-100px; }
+.geo2 { width:200px; height:200px; bottom:80px; left:80px; }
+.cov-in { position:relative; z-index:2; }
+.cov-logo { height:80px; filter:drop-shadow(0 0 30px rgba(1,75,160,.5)); margin-bottom:24px; }
+.cov-badge { display:inline-block; border:1.5px solid rgba(255,255,106,.4); color:var(--yellow); padding:9px 26px; border-radius:40px; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-top:28px; }
+
+/* ══ IMAGE PLACEHOLDER ══ */
+.img-ph {
+  background: linear-gradient(135deg, var(--bg2), var(--bg3));
+  border: 1px dashed var(--border); border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; text-align: center; padding: 20px;
+  color: var(--textS); font-size: 12px; line-height: 1.5;
+  gap: 8px;
+}
+.img-ph .icon { font-size: 32px; opacity: 0.5; }
+.img-ph .hint { font-size: 10px; color: var(--textS); opacity: 0.7; }
+
+/* ══ KPI CARDS ══ */
+.kpi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px; }
+.kpi { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; }
+.kpi .knum { font-size:36px; font-weight:900; color:var(--yellow); letter-spacing:-1px; line-height:1; margin-bottom:6px; }
+.kpi .kname { font-size:12px; font-weight:700; margin-bottom:4px; }
+.kpi .kdesc { font-size:11px; color:var(--textS); line-height:1.5; }
+.kpi.p .knum { color:var(--purpleL); }
+.kpi.b .knum { color:var(--blueL); }
+.kpi.g .knum { color:var(--green); }
+
+/* ══ RISK TABLE ══ */
+.risk-row { display:flex; gap:12px; align-items:stretch; margin-bottom:10px; }
+.risk-row .rsev { width:72px; flex-shrink:0; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; text-align:center; padding:8px; }
+.risk-content { flex:1; background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 16px; display:flex; gap:20px; }
+.risk-content .rname { font-size:13px; font-weight:700; margin-bottom:3px; }
+.risk-content .rdesc { font-size:11.5px; color:var(--textS); }
+.risk-content .rplan { font-size:11.5px; color:var(--textM); }
+.rsev.alta   { background:rgba(239,68,68,.2); color:#ef4444; }
+.rsev.media  { background:rgba(245,158,11,.2); color:#f59e0b; }
+.rsev.baja   { background:rgba(34,197,94,.2); color:#22c55e; }
+
+/* ══ DARK/LIGHT TOGGLE ══ */
+#theme-toggle {
+  position: fixed; top: 18px; right: 18px; z-index: 9999;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 30px; padding: 7px 16px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  color: var(--text); display: flex; align-items: center; gap: 8px;
+  backdrop-filter: blur(10px); transition: all 0.3s;
+}
+#theme-toggle:hover { border-color: var(--yellow); }
+
+/* ══ PRODUCT DETAIL ══ */
+.prod-split { flex-direction: row; }
+.prod-left { width: 36%; display: flex; flex-direction: column; justify-content: center; padding: 52px 44px; position: relative; overflow: hidden; }
+.prod-right { flex: 1; padding: 52px 52px; display: flex; flex-direction: column; justify-content: center; }
+.prod-price { display: inline-block; background: rgba(255,255,106,.12); border: 1px solid rgba(255,255,106,.4); color: var(--yellow); padding: 10px 20px; border-radius: 10px; font-size: 18px; font-weight: 800; margin-top: 14px; }
+.prod-tag { display: inline-block; background: rgba(127,0,178,.25); border: 1px solid var(--purpleL); color: var(--purpleL); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-bottom: 12px; }
+
+/* ══ REVEAL OVERRIDES ══ */
+.reveal .progress { background: rgba(255,255,255,.08); }
+.reveal .progress span { background: var(--yellow); }
+.reveal .controls button { color: var(--yellow); }
+</style>
+</head>
+<body>
+<button id="theme-toggle" onclick="toggleTheme()">🌙 Modo oscuro</button>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ══════════════════════════ 01 · COVER ══════════════════════════ -->
+<section data-transition="fade">
+<div class="slide cover">
+  <div class="geo-circle geo1"></div>
+  <div class="geo-circle geo2"></div>
+  <div class="cov-in">
+    <img class="cov-logo" src="LOGOS/logo_png_deg.png" alt="SW" onerror="this.style.display='none'">
+    <div class="h0">Soft<span>Waves</span></div>
+    <div class="yline center"></div>
+    <div class="body" style="font-size:17px;color:var(--textS)">
+      Desarrollo de software inteligente para PyMEs mexicanas
+    </div>
+    <div class="cov-badge">Expo-Emprende 2026A &nbsp;·&nbsp; CUVALLES</div>
+  </div>
+  <div class="snum">01 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 02 · PANORAMA MERCADO ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full">
+  <div class="tag">Panorama del Mercado</div>
+  <div class="h1">El mercado existe.<br>La <span>solución</span>, no.</div>
+  <div class="stat-row" style="margin-top:32px">
+    <div class="stat">
+      <div class="big">4.1M+</div>
+      <div class="lbl">PyMEs en México sin<br>digitalización de procesos</div>
+    </div>
+    <div class="stat">
+      <div class="big">72%</div>
+      <div class="lbl">de las PyMEs operan sin<br>software especializado</div>
+    </div>
+    <div class="stat">
+      <div class="big">$180B</div>
+      <div class="lbl">Valor del mercado de<br>software en México (MXN)</div>
+    </div>
+    <div class="stat">
+      <div class="big">12%</div>
+      <div class="lbl">Crecimiento anual del<br>sector TI en México (CAGR)</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px">
+    <div class="card">
+      <div class="ci">📉</div>
+      <h3>El problema de la oferta actual</h3>
+      <p>Los proveedores de software se enfocan en grandes empresas. Las PyMEs quedan sin opciones accesibles, personalizadas y con soporte real.</p>
+    </div>
+    <div class="card p">
+      <div class="ci">📍</div>
+      <h3>La oportunidad local</h3>
+      <p>La Región Valles de Jalisco tiene +320 empresas activas. Ninguna empresa de software con sede local las atiende de forma especializada.</p>
+    </div>
+  </div>
+  <div class="snum">02 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 03 · DESCRIPCIÓN ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split">
+  <div class="sl w42 blue-bg">
+    <div class="tag">Quiénes somos</div>
+    <div class="h1" style="font-size:40px">SoftWaves<br><span>S. de R.L. de C.V.</span></div>
+    <div class="yline"></div>
+    <ul class="check-list">
+      <li>Fundada en 2025, Ameca, Jalisco</li>
+      <li>4 socios fundadores especializados</li>
+      <li>Giro: desarrollo de software a la medida y consultoría tecnológica</li>
+      <li>Operación remota con atención local</li>
+    </ul>
+    <div style="margin-top:20px">
+      <div class="img-ph" style="height:100px">
+        <div class="icon">📸</div>
+        <div><strong>IMAGEN SUGERIDA</strong></div>
+        <div class="hint">Foto del equipo o foto de Ameca/Jalisco</div>
+      </div>
+    </div>
+  </div>
+  <div class="sr">
+    <div class="card" style="margin-bottom:18px">
+      <div class="ci">🚀</div>
+      <h3>Misión</h3>
+      <p>Empoderar a las PyMEs mexicanas con tecnología accesible, ágil y personalizada, construida sobre arquitectura moderna que entrega alto impacto en tiempos reducidos y costos competitivos.</p>
+    </div>
+    <div class="card p" style="margin-bottom:18px">
+      <div class="ci">🎯</div>
+      <h3>Visión</h3>
+      <p>Ser la empresa de desarrollo de software de referencia para las PyMEs de México y América Latina al 2028, reconocida por calidad, velocidad de entrega y solidez de sus soluciones.</p>
+    </div>
+    <div class="card y">
+      <div class="ci">💡</div>
+      <h3>Propuesta central</h3>
+      <p>Construimos software más rápido y más barato que la competencia, sin sacrificar calidad — gracias a nuestra arquitectura de bloques reutilizables.</p>
+    </div>
+  </div>
+  <div class="snum">03 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 04 · PROPUESTA DE VALOR ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full">
+  <div class="tag">Propuesta de Valor</div>
+  <div class="h1">El mismo software.<br><span>60% más rápido.</span> Mismo precio.</div>
+  <div class="body" style="max-width:700px">
+    Imaginemos que construir software es como armar una casa. Un desarrollador tradicional fabrica cada ladrillo desde cero. <strong>SoftWaves ya tiene los ladrillos listos</strong> — módulos de código probado y reutilizable — y solo personaliza el diseño y la distribución para cada cliente.
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px">
+    <div class="card">
+      <div class="ci">⚡</div>
+      <h3>60% más rápido</h3>
+      <p>Reutilizamos módulos probados. Lo que otros tardan 4 meses, nosotros lo entregamos en 6 semanas.</p>
+    </div>
+    <div class="card p">
+      <div class="ci">💰</div>
+      <h3>Costo competitivo</h3>
+      <p>Menos horas de desarrollo = menor costo para el cliente, con la misma calidad de resultado.</p>
+    </div>
+    <div class="card">
+      <div class="ci">🔧</div>
+      <h3>Hecho a la medida</h3>
+      <p>No vendemos plantillas genéricas. Cada sistema se adapta exactamente al proceso del cliente.</p>
+    </div>
+    <div class="card p">
+      <div class="ci">📈</div>
+      <h3>Escalable</h3>
+      <p>El sistema crece con el negocio. Agregar nuevas funciones es agregar módulos, no reescribir todo.</p>
+    </div>
+  </div>
+  <div style="margin-top:20px;background:rgba(255,255,106,.08);border:1px solid rgba(255,255,106,.2);border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:12px">
+    <span style="font-size:20px">🧩</span>
+    <p style="font-size:13px;color:var(--textM)"><strong style="color:var(--yellow)">Analogía para el cliente:</strong> No construimos cada vez desde cero — tenemos una biblioteca de piezas de software probadas en producción. Tu sistema es único; los componentes internos son eficientes.</p>
+  </div>
+  <div class="snum">04 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 05 · SEGMENTOS ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split">
+  <div class="sl w42 purple-bg">
+    <div class="tag">Segmentos de Mercado</div>
+    <div class="h1">Clientes<br>bien <span>definidos</span></div>
+    <div class="yline"></div>
+    <p class="body" style="color:rgba(255,255,255,.75)">Atacamos dos segmentos con estrategias y productos diferenciados, priorizando la Región Valles para construir reputación local antes de escalar.</p>
+  </div>
+  <div class="sr" style="gap:16px;flex-direction:column;justify-content:center">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <h3>🏢 Segmento A — PyME Establecida</h3>
+        <span class="pill pill-b">Primario</span>
+      </div>
+      <p><strong>Quiénes:</strong> Comercios, manufactura, salud, servicios profesionales con 5–100 empleados</p>
+      <p style="margin-top:6px"><strong>Necesidad:</strong> Sistemas de gestión, e-commerce, automatización, apps internas</p>
+      <p style="margin-top:6px"><strong>Ticket:</strong> $25,000–$120,000 MXN por proyecto o $2,500–$12,000/mes</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--purple)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <h3>🌱 Segmento B — Microempresa Digital</h3>
+        <span class="pill pill-p">Secundario</span>
+      </div>
+      <p><strong>Quiénes:</strong> Emprendedores, tiendas pequeñas, negocios de barrio con 1–5 empleados</p>
+      <p style="margin-top:6px"><strong>Necesidad:</strong> Control de inventario básico, registro de ventas, presencia digital</p>
+      <p style="margin-top:6px"><strong>Ticket:</strong> $2,500–$5,000/mes (SaaS simplificado)</p>
+    </div>
+    <div class="card y" style="border-left:4px solid var(--yellow)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <h3>🌐 Segmento C — Nacional (Remoto)</h3>
+        <span class="pill pill-y">Crecimiento</span>
+      </div>
+      <p><strong>Quiénes:</strong> Empresas de cualquier estado que buscan desarrollo ágil y económico a distancia</p>
+      <p style="margin-top:6px"><strong>Canal:</strong> LinkedIn, referidos, portafolio web, proyectos piloto</p>
+    </div>
+  </div>
+  <div class="snum">05 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 06 · PORTER ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full" style="padding:40px 60px">
+  <div class="tag">Análisis Competitivo</div>
+  <div class="h1" style="font-size:38px">5 Fuerzas de Porter — <span>Posición favorable</span></div>
+  <div class="porter-grid" style="margin-top:20px">
+    <div class="porter-card">
+      <div class="force-label"><span style="font-size:24px">🚪</span></div>
+      <div class="force-bar-wrap">
+        <div class="fn">Amenaza de Nuevos Entrantes</div>
+        <div class="fl">Barreras técnicas y reputación neutralizan la entrada masiva de freelancers</div>
+        <div class="force-bar"><div class="force-fill force-alta" style="width:75%"></div></div>
+        <span class="force-tag ft-alta">ALTA — Mitigada</span>
+      </div>
+    </div>
+    <div class="porter-card">
+      <div class="force-label"><span style="font-size:24px">🏭</span></div>
+      <div class="force-bar-wrap">
+        <div class="fn">Poder de Proveedores</div>
+        <div class="fl">Cloud abierto (AWS/GCP), herramientas open-source, sin dependencia crítica</div>
+        <div class="force-bar"><div class="force-fill force-baja" style="width:25%"></div></div>
+        <span class="force-tag ft-baja">BAJO — Favorable</span>
+      </div>
+    </div>
+    <div class="porter-card">
+      <div class="force-label"><span style="font-size:24px">🛒</span></div>
+      <div class="force-bar-wrap">
+        <div class="fn">Poder de Compradores</div>
+        <div class="fl">PyMEs con alta necesidad y pocas alternativas locales. Precio justificado por valor entregado</div>
+        <div class="force-bar"><div class="force-fill force-media" style="width:50%"></div></div>
+        <span class="force-tag ft-media">MEDIA — Controlada</span>
+      </div>
+    </div>
+    <div class="porter-card">
+      <div class="force-label"><span style="font-size:24px">🔄</span></div>
+      <div class="force-bar-wrap">
+        <div class="fn">Amenaza de Sustitutos</div>
+        <div class="fl">No-code y SaaS genérico no cubren necesidades específicas de PyMEs complejas</div>
+        <div class="force-bar"><div class="force-fill force-media" style="width:45%"></div></div>
+        <span class="force-tag ft-media">MEDIA — Monitoreable</span>
+      </div>
+    </div>
+    <div class="porter-card" style="grid-column:1/-1">
+      <div class="force-label"><span style="font-size:24px">⚔️</span></div>
+      <div class="force-bar-wrap">
+        <div class="fn">Rivalidad del Sector</div>
+        <div class="fl">Alta competencia a nivel nacional (freelancers, agencias GDL/CDMX), pero <strong>nula competencia local en Región Valles</strong>. SoftWaves es el único actor organizado y especializado en PyMEs locales con modelo flexible.</div>
+        <div class="force-bar"><div class="force-fill force-alta" style="width:80%"></div></div>
+        <span class="force-tag ft-alta">ALTA (nacional) — NULA (local) ✓ Ventaja</span>
+      </div>
+    </div>
+  </div>
+  <div class="snum">06 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 07 · PORTAFOLIO INTRO ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full" style="padding:44px 68px">
+  <div class="tag">Portafolio de Productos</div>
+  <div class="h1">4 productos. <span>Un ecosistema.</span></div>
+  <div class="body" style="max-width:650px">Cada producto responde a una necesidad distinta del mismo cliente. El objetivo es que el cliente entre por cualquier puerta y eventualmente use todo el ecosistema.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px">
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:32px;flex-shrink:0">🖥️</div>
+      <div><h3>01 — Proyecto Cerrado</h3><p>Compra el software, queda como dueño. Pago único por proyecto completo.</p><div class="prod-price" style="font-size:14px;padding:6px 14px;margin-top:8px">$15,000 – $120,000 MXN</div></div>
+    </div>
+    <div class="card p" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:32px;flex-shrink:0">☁️</div>
+      <div><h3>02 — SaaS Renta Mensual</h3><p>Renta el software. Mantenimiento, hosting y actualizaciones incluidas.</p><div class="prod-price" style="font-size:14px;padding:6px 14px;margin-top:8px">$2,500 – $12,000 MXN/mes</div></div>
+    </div>
+    <div class="card y" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:32px;flex-shrink:0">🔧</div>
+      <div><h3>03 — Consultoría Tecnológica</h3><p>Asesoría especializada por hora. Diagnóstico gratuito de 30 min incluido.</p><div class="prod-price" style="font-size:14px;padding:6px 14px;margin-top:8px">$600 – $1,500 MXN/hr</div></div>
+    </div>
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start;border-top-color:var(--purpleL)">
+      <div style="font-size:32px;flex-shrink:0">🤖</div>
+      <div><h3>04 — IA Premium</h3><p>Automatización con inteligencia artificial integrada al sistema del cliente.</p><div class="prod-price" style="font-size:14px;padding:6px 14px;margin-top:8px">$1,500 – $8,000 MXN/mes</div></div>
+    </div>
+  </div>
+  <div class="snum">07 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 08 · PRODUCTO 1 ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split prod-split">
+  <div class="prod-left blue-bg">
+    <div class="prod-tag">Producto 01</div>
+    <div style="font-size:48px;margin-bottom:12px">🖥️</div>
+    <div class="h2" style="color:#fff">Proyecto<br>Cerrado</div>
+    <div class="yline"></div>
+    <div class="prod-price">$15K – $120K MXN</div>
+    <p class="body" style="color:rgba(255,255,255,.7);margin-top:14px">Pago 50% al inicio · 50% en entrega</p>
+    <div class="img-ph" style="height:90px;margin-top:16px">
+      <div class="icon">🖼️</div>
+      <div class="hint">IMAGEN: Mockup de interfaz / dashboard de software</div>
+    </div>
+  </div>
+  <div class="prod-right">
+    <div class="tag">¿Qué es?</div>
+    <div class="h2">El cliente <span class="accent">compra</span> y es dueño del sistema</div>
+    <ul class="check-list" style="margin-top:18px">
+      <li>Sistema diseñado 100% a la medida del proceso del cliente</li>
+      <li>Al concluir: código fuente, documentación técnica y manual de usuario</li>
+      <li>Transmisión formal de derechos de autor (INDAUTOR)</li>
+      <li>Garantía de 90 días post-entrega incluida</li>
+      <li>Capacitación de uso al equipo del cliente</li>
+      <li>Opción de contratar mantenimiento mensual post-entrega</li>
+    </ul>
+    <div class="card" style="margin-top:20px;border-color:rgba(255,255,106,.2)">
+      <p style="font-size:13px"><strong style="color:var(--yellow)">¿Cuándo conviene?</strong> Para empresas que quieren ser dueñas de su tecnología a largo plazo y tienen presupuesto para inversión única. Ideal para sistemas de gestión interna, plataformas de ventas o apps propias.</p>
+    </div>
+  </div>
+  <div class="snum">08 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 09 · PRODUCTO 2 ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split prod-split">
+  <div class="prod-left purple-bg">
+    <div class="prod-tag" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff">Producto 02 ⭐ Principal</div>
+    <div style="font-size:48px;margin-bottom:12px">☁️</div>
+    <div class="h2" style="color:#fff">SaaS<br>Renta Mensual</div>
+    <div class="yline"></div>
+    <div class="prod-price">$2,500 – $12,000 MXN/mes</div>
+    <p class="body" style="color:rgba(255,255,255,.7);margin-top:14px">30% al inicio + cuota mensual</p>
+    <div style="margin-top:16px;background:rgba(255,255,255,.1);border-radius:8px;padding:10px 14px">
+      <div style="font-size:11px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:4px">INGRESO RECURRENTE MENSUAL</div>
+      <div style="font-size:22px;font-weight:900;color:var(--yellow)">🔄 MRR</div>
+    </div>
+  </div>
+  <div class="prod-right">
+    <div class="tag">¿Qué es?</div>
+    <div class="h2">El cliente <span class="accent">renta</span> — paga mensual, siempre actualizado</div>
+    <ul class="check-list" style="margin-top:18px">
+      <li>Hosting, respaldos automáticos y actualizaciones de seguridad incluidas</li>
+      <li>Soporte técnico mensual incluido — sin costos adicionales</li>
+      <li>Opción de compra total del sistema en cualquier momento</li>
+      <li>Acceso al sistema desde cualquier dispositivo con internet</li>
+      <li>Sin inversión inicial grande — barrera de entrada mínima</li>
+      <li>Contrato inicial de 12 meses, renovación automática</li>
+    </ul>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px">
+      <div class="card">
+        <h3>Para el cliente</h3>
+        <p>Bajo costo inicial, software siempre actualizado, soporte continuo sin sorpresas.</p>
+      </div>
+      <div class="card p">
+        <h3>Para SoftWaves</h3>
+        <p>Ingreso recurrente predecible. Cada cliente nuevo suma al MRR de forma permanente.</p>
+      </div>
+    </div>
+  </div>
+  <div class="snum">09 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 10 · PROD 3 + 4 ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full">
+  <div class="tag">Portafolio Complementario</div>
+  <div class="h1" style="font-size:36px">Consultoría <span>&</span> Inteligencia Artificial</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px">
+    <div>
+      <div class="card y" style="margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <span style="font-size:28px">🔧</span>
+          <div><h3>Consultoría Tecnológica</h3><div class="prod-price" style="font-size:12px;padding:4px 10px;margin-top:4px">$600 – $1,500 MXN/hr</div></div>
+        </div>
+        <ul class="check-list">
+          <li>Diagnóstico gratuito de 30 minutos</li>
+          <li>Análisis de procesos actuales del negocio</li>
+          <li>Auditoría de sistemas existentes</li>
+          <li>Propuesta de solución + reporte ejecutivo</li>
+          <li>Puerta de entrada para proyectos mayores</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:14px;border-top-color:var(--purpleL)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <span style="font-size:28px">🤖</span>
+          <div><h3>IA Premium</h3><div class="prod-price" style="font-size:12px;padding:4px 10px;margin-top:4px">$1,500 – $8,000 MXN/mes</div></div>
+        </div>
+        <ul class="check-list">
+          <li>Predicción de ventas y análisis de datos</li>
+          <li>Atención automática a clientes (chatbot)</li>
+          <li>Recomendaciones de inventario por IA</li>
+          <li>Integración directa al sistema del cliente</li>
+          <li>Gratis para clientes SoftWaves existentes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="background:rgba(255,255,106,.06);border:1px solid rgba(255,255,106,.2);border-radius:12px;padding:14px 20px;margin-top:8px;display:flex;gap:12px;align-items:center">
+    <span style="font-size:20px">🔗</span>
+    <p style="font-size:13px;color:var(--textM)"><strong style="color:var(--yellow)">Diferenciador clave:</strong> Un cliente puede entrar por consultoría → pasar a SaaS → agregar IA Premium. El ecosistema está diseñado para crecer con el cliente y aumentar el ticket promedio por cuenta.</p>
+  </div>
+  <div class="snum">10 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 11 · MODELO CANVAS ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide" style="flex-direction:column;padding:32px 52px">
+  <div style="margin-bottom:14px">
+    <div class="tag">Modelo de Negocio</div>
+    <div class="h1" style="font-size:36px">Business Model <span>Canvas</span></div>
+  </div>
+  <div class="canvas-grid">
+    <!-- Row 1: Socios | Actividades | Valor | Relaciones | Segmentos -->
+    <div class="cv blue-cv">
+      <h5>🤝 Socios Clave</h5>
+      <ul>
+        <li>AWS / Google Cloud / Azure</li>
+        <li>Freelancers especializados</li>
+        <li>Contadores y asesores legales</li>
+        <li>Proveedores de diseño UX</li>
+      </ul>
+    </div>
+    <div class="cv blue-cv">
+      <h5>⚙️ Actividades Clave</h5>
+      <ul>
+        <li>Desarrollo de software</li>
+        <li>Ventas y prospección</li>
+        <li>Gestión de proyectos</li>
+        <li>Soporte técnico continuo</li>
+        <li>Mantenimiento de sistemas</li>
+      </ul>
+    </div>
+    <div class="cv yellow-cv span2" style="grid-row:1/3;background:rgba(255,255,106,.05)">
+      <h5>💎 Propuesta de Valor</h5>
+      <ul>
+        <li>Software 60% más rápido de entregar</li>
+        <li>A la medida — no genérico</li>
+        <li>Compra o renta flexible</li>
+        <li>Soporte continuo incluido</li>
+        <li>IA integrable en cualquier momento</li>
+        <li>Único proveedor local en Región Valles</li>
+        <li>Arquitectura escalable por módulos</li>
+      </ul>
+      <div style="margin-top:12px;padding:10px;background:rgba(255,255,106,.1);border-radius:8px">
+        <p style="font-size:11px;color:var(--yellow);font-weight:700">El mejor ROI en software a la medida para PyMEs mexicanas</p>
+      </div>
+    </div>
+    <div class="cv purple-cv">
+      <h5>💬 Rel. con Clientes</h5>
+      <ul>
+        <li>Soporte personalizado</li>
+        <li>Reuniones de seguimiento</li>
+        <li>Capacitación incluida</li>
+        <li>Portal de tickets</li>
+      </ul>
+    </div>
+    <div class="cv purple-cv">
+      <h5>👥 Segmentos</h5>
+      <ul>
+        <li>PyMEs Región Valles</li>
+        <li>Microempresas locales</li>
+        <li>Empresas nacionales (remoto)</li>
+        <li>Emprendedores digitales</li>
+      </ul>
+    </div>
+    <!-- Row 2: Recursos | (Valor ocupa 2 rows) | Canales -->
+    <div class="cv blue-cv">
+      <h5>🛠️ Recursos Clave</h5>
+      <ul>
+        <li>Equipo técnico fundador</li>
+        <li>Biblioteca de módulos SW</li>
+        <li>Marca y reputación</li>
+        <li>Infraestructura cloud</li>
+      </ul>
+    </div>
+    <div class="cv blue-cv">
+      <h5>📣 Actividades (cont.)</h5>
+      <ul>
+        <li>Desarrollo de portafolio</li>
+        <li>Marketing digital</li>
+        <li>Formación del equipo</li>
+      </ul>
+    </div>
+    <div class="cv purple-cv">
+      <h5>📡 Canales</h5>
+      <ul>
+        <li>Referidos y boca a boca</li>
+        <li>LinkedIn y redes sociales</li>
+        <li>Sitio web + portafolio</li>
+        <li>Visitas presenciales locales</li>
+        <li>Expo-Emprende / eventos</li>
+      </ul>
+    </div>
+    <div class="cv purple-cv">
+      <h5>📡 Canales (cont.)</h5>
+      <ul>
+        <li>Diagnóstico gratuito como gancho</li>
+        <li>Proyectos piloto a precio especial</li>
+      </ul>
+    </div>
+    <!-- Row 3: Costos y Ingresos -->
+    <div class="cv blue-cv cost" style="grid-column:1/3">
+      <h5>💸 Estructura de Costos</h5>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <ul>
+          <li>Honorarios equipo fundador</li>
+          <li>Colaboradores externos por proyecto</li>
+          <li>Herramientas SaaS y licencias</li>
+        </ul>
+        <ul>
+          <li>Hosting y servicios cloud</li>
+          <li>Renta de oficina</li>
+          <li>Marketing y publicidad</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cv green-cv rev" style="grid-column:4/6">
+      <h5>💰 Fuentes de Ingresos</h5>
+      <ul>
+        <li>Proyectos cerrados (68% Año 1)</li>
+        <li>Renta mensual SaaS (29% Año 1)</li>
+        <li>Consultoría por hora (4%)</li>
+        <li>Licencias IA Premium (2%+)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="snum">11 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 12 · FASES ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full">
+  <div class="tag">Plan de Crecimiento</div>
+  <div class="h1">3 fases hacia la <span>consolidación</span></div>
+  <div class="rm" style="margin-top:40px">
+    <div class="rc">
+      <div class="rd rd-done">✓</div>
+      <h3>Fundación</h3>
+      <div class="ry">FASE 1 · 2025</div>
+      <p>Constitución legal · Plan de negocios · Primeros contratos piloto · Arquitectura de microservicios · Portafolio inicial</p>
+    </div>
+    <div class="rc">
+      <div class="rd rd-active" style="animation:pulse 2s infinite">▶</div>
+      <h3>Lanzamiento</h3>
+      <div class="ry">FASE 2 · 2026 — ACTIVA</div>
+      <p>Lanzamiento oficial · 3–8 clientes activos · SaaS en producción · Posicionamiento regional · Expo-Emprende · Primer empleado</p>
+    </div>
+    <div class="rc">
+      <div class="rd rd-next">◎</div>
+      <h3>Expansión</h3>
+      <div class="ry">FASE 3 · 2027</div>
+      <p>Expansión nacional · 8+ personas · Ingresos >$1M MXN · Oficina propia · Producto SaaS propio escalable</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px">
+    <div class="card" style="text-align:center;padding:16px">
+      <div style="font-size:28px;font-weight:900;color:var(--blue)">$281K</div>
+      <div style="font-size:11px;color:var(--textS)">Inversión Fase 1</div>
+    </div>
+    <div class="card p" style="text-align:center;padding:16px">
+      <div style="font-size:28px;font-weight:900;color:var(--purpleL)">$733K</div>
+      <div style="font-size:11px;color:var(--textS)">Meta ingresos Año 1</div>
+    </div>
+    <div class="card" style="text-align:center;padding:16px;border-top-color:var(--yellow)">
+      <div style="font-size:28px;font-weight:900;color:var(--yellow)">$1M+</div>
+      <div style="font-size:11px;color:var(--textS)">Meta ingresos Año 3</div>
+    </div>
+  </div>
+  <div class="snum">12 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 13 · FLUJO DE TRABAJO ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split">
+  <div class="sl w42 dark-bg">
+    <div class="tag">Operaciones</div>
+    <div class="h1" style="font-size:36px">Flujo de<br>trabajo<br><span>por proyecto</span></div>
+    <div class="yline"></div>
+    <div class="card" style="margin-top:8px">
+      <h3>Modelo de personal flexible</h3>
+      <p>SoftWaves no mantiene una plantilla grande fija. Los colaboradores externos se contratan por proyecto, convirtiendo costos fijos en costos variables. <strong>Solo se paga por lo que se genera.</strong></p>
+    </div>
+  </div>
+  <div class="sr" style="padding:44px 44px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;color:#fff">1</div>
+        <div><strong>Contacto y diagnóstico</strong><br><span style="font-size:12px;color:var(--textS)">Reunión gratuita 30 min. Análisis de necesidades. Propuesta formal en 48 hrs.</span></div>
+      </div>
+      <div style="width:2px;height:14px;background:var(--border);margin-left:15px"></div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;color:#fff">2</div>
+        <div><strong>Firma y primer pago (50%)</strong><br><span style="font-size:12px;color:var(--textS)">Contrato con alcance definido. Control de cambios formal desde el inicio.</span></div>
+      </div>
+      <div style="width:2px;height:14px;background:var(--border);margin-left:15px"></div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;color:#fff">3</div>
+        <div><strong>Integración del equipo técnico</strong><br><span style="font-size:12px;color:var(--textS)">Freelancers especializados según complejidad. Solo se contratan los perfiles necesarios.</span></div>
+      </div>
+      <div style="width:2px;height:14px;background:var(--border);margin-left:15px"></div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;color:#fff">4</div>
+        <div><strong>Desarrollo iterativo (sprints ~2 semanas)</strong><br><span style="font-size:12px;color:var(--textS)">Revisiones periódicas con el cliente. Ajustes en tiempo real. Transparencia total.</span></div>
+      </div>
+      <div style="width:2px;height:14px;background:var(--border);margin-left:15px"></div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;color:#fff">5</div>
+        <div><strong>Control de calidad y pruebas</strong><br><span style="font-size:12px;color:var(--textS)">Supervisión del Jefe de Desarrollo + RRHH verifica documentación y procesos.</span></div>
+      </div>
+      <div style="width:2px;height:14px;background:var(--border);margin-left:15px"></div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;color:#000">6</div>
+        <div><strong>Entrega, capacitación y mantenimiento</strong><br><span style="font-size:12px;color:var(--textS)">Pago final (50%). Capacitación al cliente. Transición a contrato mensual de soporte.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="snum">13 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 14 · EQUIPO ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full">
+  <div class="tag">Equipo Fundador</div>
+  <div class="h1" style="font-size:38px">4 perfiles, <span>cero brechas</span> en las áreas críticas</div>
+  <div class="team-grid" style="margin-top:20px">
+    <div class="tc">
+      <div class="av avb">
+        <img src="https://minato97.github.io/softwaves/assets/ignacio.jpg" alt="IA" onerror="this.style.display='none';this.parentNode.textContent='IA'">
+      </div>
+      <div>
+        <div class="n">Ing. Ignacio Andrade Salazar</div>
+        <div class="r">CEO &amp; Fundador · Dirección General</div>
+        <div class="e">Lic. Administración · Ing. Electrónica y Computación · M.I.S. en curso</div>
+        <div class="tags">
+          <span class="skill-tag">Estrategia</span><span class="skill-tag">Ventas</span><span class="skill-tag">Full-stack</span><span class="skill-tag">Gestión</span>
+        </div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="av avp">
+        <img src="https://minato97.github.io/softwaves/assets/martin.jpg" alt="MA" onerror="this.style.display='none';this.parentNode.textContent='MA'">
+      </div>
+      <div>
+        <div class="n">Mtro. Martín J. Andrade Salazar</div>
+        <div class="r">Jefe de Desarrollo · Backend &amp; Frontend</div>
+        <div class="e">Lic. Tecnologías de la Información · Maestro en Ingeniería de Software</div>
+        <div class="tags">
+          <span class="skill-tag">Backend</span><span class="skill-tag">Frontend</span><span class="skill-tag">Arquitectura</span><span class="skill-tag">M.I.S.</span>
+        </div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="av avb2">
+        <img src="https://minato97.github.io/softwaves/assets/edgar.jpg" alt="EG" onerror="this.style.display='none';this.parentNode.textContent='EG'">
+      </div>
+      <div>
+        <div class="n">Ing. Edgar G. Guerrero Santana</div>
+        <div class="r">Diseño UI/UX &amp; Marketing Digital</div>
+        <div class="e">Ing. Electrónica y Computación · Certificación en Diseño UI/UX</div>
+        <div class="tags">
+          <span class="skill-tag">UI/UX</span><span class="skill-tag">Branding</span><span class="skill-tag">Marketing</span><span class="skill-tag">Diseño</span>
+        </div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="av avn">
+        <img src="https://minato97.github.io/softwaves/assets/eveley.jpg" alt="EO" onerror="this.style.display='none';this.parentNode.textContent='EO'">
+      </div>
+      <div>
+        <div class="n">Fut. Ing. Evelyn M. Ortiz Fajardo</div>
+        <div class="r">Recursos Humanos &amp; Gestión de Personal</div>
+        <div class="e">Ing. Instrumentación Electrónica y Nanosensores · Diplomado en RRHH</div>
+        <div class="tags">
+          <span class="skill-tag">RRHH</span><span class="skill-tag">Contratos</span><span class="skill-tag">Clima org.</span><span class="skill-tag">Reclutamiento</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="snum">14 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 15 · INVERSIÓN ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split">
+  <div class="sl w38 grad-bg">
+    <div class="tag">Plan Financiero</div>
+    <div class="h1">Inversión<br>Inicial</div>
+    <div class="yline"></div>
+    <div style="font-size:58px;font-weight:900;color:var(--yellow);letter-spacing:-2px;line-height:1">$281K</div>
+    <div style="font-size:14px;color:rgba(255,255,255,.6);margin-top:6px">MXN · Capital propio</div>
+    <div style="margin-top:20px">
+      <div style="font-size:12px;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:6px">SIN FINANCIAMIENTO EXTERNO</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:8px;padding:12px 16px;font-size:13px;color:rgba(255,255,255,.8)">Los 4 socios aportan capital en partes iguales. La empresa inicia libre de deuda.</div>
+    </div>
+  </div>
+  <div class="sr">
+    <div class="tag gray">Distribución de la inversión</div>
+    <div class="h2" style="font-size:24px;margin-bottom:24px">¿En qué se invierte?</div>
+    <div class="bar-item">
+      <div class="bar-label"><span class="yl">💻 Equipos de cómputo (4 laptops pro)</span><span class="vl">$132,000</span></div>
+      <div class="bar-track"><div class="bar-fill bf-b" style="width:47%"></div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span class="yl">🏢 Oficina (depósito + adecuaciones)</span><span class="vl">$49,000</span></div>
+      <div class="bar-track"><div class="bar-fill bf-p" style="width:17%"></div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span class="yl">📣 Marketing y constitución legal</span><span class="vl">$65,500</span></div>
+      <div class="bar-track"><div class="bar-fill bf-y" style="width:23%"></div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span class="yl">💼 Capital de trabajo (2 meses)</span><span class="vl">$26,000</span></div>
+      <div class="bar-track"><div class="bar-fill bf-g" style="width:9%"></div></div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-label"><span class="yl">🖥️ Software / hosting / dominio (1er año)</span><span class="vl">$8,500</span></div>
+      <div class="bar-track"><div class="bar-fill bf-b" style="width:3%"></div></div>
+    </div>
+    <div style="margin-top:20px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:12px 18px;display:flex;gap:12px;align-items:center">
+      <span style="font-size:20px">📊</span>
+      <p style="font-size:13px;color:var(--textM)">Punto de equilibrio operativo: <strong style="color:var(--green)">Mes 7–8</strong> · Recuperación de inversión: <strong style="color:var(--green)">~18 meses</strong></p>
+    </div>
+  </div>
+  <div class="snum">15 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 16 · PROYECCIÓN VENTAS ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full" style="padding:38px 60px">
+  <div class="tag">Proyección de Ventas</div>
+  <div class="h1" style="font-size:36px">Año 1: <span>$733,000 MXN</span> — Desglose por producto</div>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:20px">
+    <div>
+      <table class="tbl" style="font-size:12px">
+        <thead>
+          <tr><th>Producto</th><th>Unidades</th><th>Precio prom.</th><th>Ingreso</th><th>%</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🖥️ Proyecto Cerrado</strong></td>
+            <td>9 proyectos</td>
+            <td class="pill pill-b">$55,000</td>
+            <td><strong style="color:var(--yellow)">$495,000</strong></td>
+            <td><span class="pill pill-y">68%</span></td>
+          </tr>
+          <tr>
+            <td><strong>☁️ SaaS Renta Mensual</strong></td>
+            <td>2→8 clientes</td>
+            <td class="pill pill-p">$4,500/mes</td>
+            <td><strong style="color:var(--yellow)">$216,000</strong></td>
+            <td><span class="pill pill-p">29%</span></td>
+          </tr>
+          <tr>
+            <td><strong>🔧 Consultoría</strong></td>
+            <td>~30 horas</td>
+            <td class="pill pill-b">$900/hr</td>
+            <td><strong style="color:var(--textS)">$27,000</strong></td>
+            <td><span class="pill pill-b">4%</span></td>
+          </tr>
+          <tr>
+            <td><strong>🤖 IA Premium</strong></td>
+            <td>3 clientes</td>
+            <td class="pill pill-p">$1,500/mes</td>
+            <td><strong style="color:var(--textS)">$13,500</strong></td>
+            <td><span class="pill pill-p">2%</span></td>
+          </tr>
+          <tr style="background:rgba(1,75,160,.15)">
+            <td colspan="3"><strong>TOTAL AÑO 1</strong></td>
+            <td><strong style="color:var(--yellow);font-size:15px">$733,000</strong></td>
+            <td><strong>100%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="tbl" style="margin-top:14px;font-size:12px">
+        <thead><tr><th>Trimestre</th><th>Proyectos</th><th>Clientes SaaS</th><th>Ingreso</th></tr></thead>
+        <tbody>
+          <tr><td>Q1 Ene–Mar</td><td>2</td><td>2 activos</td><td>$102,000</td></tr>
+          <tr><td>Q2 Abr–Jun</td><td>2</td><td>4 activos</td><td>$145,000</td></tr>
+          <tr><td>Q3 Jul–Sep</td><td>2</td><td>6 activos</td><td>$212,000</td></tr>
+          <tr><td>Q4 Oct–Dic</td><td>3</td><td>8 activos</td><td>$274,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card" style="text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--textS);margin-bottom:4px">PROYECCIÓN 3 AÑOS</div>
+        <div style="display:flex;justify-content:space-around;margin-top:8px">
+          <div><div style="font-size:26px;font-weight:900;color:var(--blue2)">$733K</div><div style="font-size:10px;color:var(--textS)">Año 1</div></div>
+          <div><div style="font-size:26px;font-weight:900;color:var(--purpleL)">$1.34M</div><div style="font-size:10px;color:var(--textS)">Año 2</div></div>
+          <div><div style="font-size:26px;font-weight:900;color:var(--yellow)">$2.16M</div><div style="font-size:10px;color:var(--textS)">Año 3</div></div>
+        </div>
+      </div>
+      <div class="card p">
+        <h3>🔄 Poder del MRR</h3>
+        <p>Los 8 clientes SaaS del Año 1 generan ingresos recurrentes permanentes. Cada año se suman más — sin perder los anteriores. Al año 3, el SaaS podría representar el 50%+ de los ingresos.</p>
+      </div>
+      <div class="card y">
+        <h3>📈 Por qué Proyecto Cerrado domina Año 1</h3>
+        <p>El ticket alto ($55K promedio) lo hace la fuente de efectivo principal. Solo 9 proyectos = $495K. Ideal para los primeros meses donde el SaaS aún está construyendo base.</p>
+      </div>
+    </div>
+  </div>
+  <div class="snum">16 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 17 · KPIs ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full">
+  <div class="tag">Indicadores de Desempeño</div>
+  <div class="h1" style="font-size:36px">KPIs que <span>guían</span> cada decisión</div>
+  <div class="kpi-grid" style="margin-top:22px">
+    <div class="kpi">
+      <div class="knum">MRR</div>
+      <div class="kname">Ingreso Mensual Recurrente</div>
+      <div class="kdesc">Meta: $36,000 MXN/mes al cierre del Año 1 (8 clientes SaaS × $4,500 prom). Crece cada mes que se suma un cliente.</div>
+    </div>
+    <div class="kpi p">
+      <div class="knum">CAC</div>
+      <div class="kname">Costo de Adquisición de Cliente</div>
+      <div class="kdesc">Meta: &lt;$3,500 MXN por cliente. Se mide dividiendo gasto en marketing entre clientes cerrados en el período.</div>
+    </div>
+    <div class="kpi b">
+      <div class="knum">LTV</div>
+      <div class="kname">Valor de Vida del Cliente</div>
+      <div class="kdesc">Meta: &gt;$80,000 MXN (cliente SaaS 18+ meses). LTV/CAC objetivo: 20x mínimo para ser rentable.</div>
+    </div>
+    <div class="kpi g">
+      <div class="knum">≤6s</div>
+      <div class="kname">Lead Time de Entrega</div>
+      <div class="kdesc">Meta: entregar proyectos en ≤6 semanas (vs. 12–16 sem. del mercado). Indicador de nuestra ventaja competitiva.</div>
+    </div>
+    <div class="kpi">
+      <div class="knum">NPS</div>
+      <div class="kname">Net Promoter Score</div>
+      <div class="kdesc">Meta: NPS &gt;70. Medido en encuesta post-entrega. Alto NPS = referidos orgánicos que reducen el CAC.</div>
+    </div>
+    <div class="kpi p">
+      <div class="knum">Churn</div>
+      <div class="kname">Tasa de Cancelación SaaS</div>
+      <div class="kdesc">Meta: &lt;5% mensual. Cada cliente que cancela interrumpe el MRR. Soporte proactivo y actualizaciones constantes lo minimizan.</div>
+    </div>
+  </div>
+  <div class="snum">17 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 18 · FINANCIAMIENTO ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split">
+  <div class="sl w42 blue-bg">
+    <div class="tag">Financiamiento</div>
+    <div class="h1">Capital<br><span>propio.</span><br>Sin deuda.</div>
+    <div class="yline"></div>
+    <p class="body" style="color:rgba(255,255,255,.75)">La inversión inicial de $281,000 MXN es aportada en partes iguales por los 4 socios fundadores. No se requiere crédito bancario ni inversionista externo para arrancar.</p>
+    <div style="margin-top:20px;background:rgba(255,255,255,.1);border-radius:10px;padding:14px 18px">
+      <div style="font-size:11px;color:rgba(255,255,255,.5);margin-bottom:4px">APORTACIÓN POR SOCIO</div>
+      <div style="font-size:32px;font-weight:900;color:var(--yellow)">$70,250</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.5)">MXN por fundador</div>
+    </div>
+  </div>
+  <div class="sr">
+    <div class="tag gray">Plan de financiamiento</div>
+    <div class="h2" style="font-size:24px;margin-bottom:20px">Opciones futuras (Año 2–3)</div>
+    <ul class="num-list">
+      <li>
+        <div class="n">01</div>
+        <div class="txt">
+          <h4>Reinversión de utilidades</h4>
+          <p>La principal fuente de crecimiento. Las utilidades del Año 2 financian la expansión del Año 3 sin perder participación accionaria.</p>
+        </div>
+      </li>
+      <li>
+        <div class="n">02</div>
+        <div class="txt">
+          <h4>Programas gubernamentales</h4>
+          <p>INADEM, Fondo Jalisco Emprende, CONACYT (FORDECYT). Fondos no reembolsables para empresas tecnológicas en etapa temprana.</p>
+        </div>
+      </li>
+      <li>
+        <div class="n">03</div>
+        <div class="txt">
+          <h4>Crédito PyME Bancario</h4>
+          <p>Una vez con historial crediticio y estados financieros auditados (Año 2+), acceso a créditos PYME para expansión de equipo.</p>
+        </div>
+      </li>
+      <li>
+        <div class="n">04</div>
+        <div class="txt">
+          <h4>Inversión ángel</h4>
+          <p>Solo si se desarrolla un producto SaaS propio escalable que requiera capital para crecer sin comprometer la operación.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="snum">18 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 19 · RIESGOS ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full" style="padding:38px 60px">
+  <div class="tag">Gestión de Riesgos</div>
+  <div class="h1" style="font-size:36px">Riesgos identificados <span>&amp; plan de contingencia</span></div>
+  <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+    <div class="risk-row">
+      <div class="rsev alta">ALTO</div>
+      <div class="risk-content">
+        <div style="flex:1.2"><div class="rname">Captación lenta de clientes</div><div class="rdesc">Primeros meses sin ingresos suficientes para cubrir costos fijos</div></div>
+        <div style="flex:2"><div style="font-size:10px;font-weight:700;color:var(--yellow);margin-bottom:3px">PLAN DE CONTINGENCIA</div><div class="rplan">Networking intensivo desde el día 1 · Primer proyecto a precio especial · Diagnóstico gratuito como gancho · Fondo de 2 meses de capital de trabajo reservado en la inversión inicial</div></div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="rsev alta">ALTO</div>
+      <div class="risk-content">
+        <div style="flex:1.2"><div class="rname">Saturación del equipo fundador</div><div class="rdesc">4 personas no pueden atender proyectos múltiples simultáneos a gran escala</div></div>
+        <div style="flex:2"><div style="font-size:10px;font-weight:700;color:var(--yellow);margin-bottom:3px">PLAN DE CONTINGENCIA</div><div class="rplan">Límite de proyectos simultáneos definido en 3 · Red de freelancers pre-calificados · Incremento de precios si la demanda supera capacidad</div></div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="rsev media">MEDIO</div>
+      <div class="risk-content">
+        <div style="flex:1.2"><div class="rname">Scope creep en proyectos</div><div class="rdesc">Clientes que piden más funciones de las contratadas, extendiendo tiempos y costos</div></div>
+        <div style="flex:2"><div style="font-size:10px;font-weight:700;color:var(--yellow);margin-bottom:3px">PLAN DE CONTINGENCIA</div><div class="rplan">Contratos con alcance técnico detallado · Política de control de cambios formal desde el inicio · Addendum firmado y cotizado para cambios</div></div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="rsev media">MEDIO</div>
+      <div class="risk-content">
+        <div style="flex:1.2"><div class="rname">Cancelación de contratos SaaS</div><div class="rdesc">Clientes que cancelan reducen el MRR y afectan proyecciones de crecimiento</div></div>
+        <div style="flex:2"><div style="font-size:10px;font-weight:700;color:var(--yellow);margin-bottom:3px">PLAN DE CONTINGENCIA</div><div class="rplan">Soporte proactivo mensual · Actualizaciones constantes que generen valor · Encuesta NPS para detectar clientes en riesgo antes de que cancelen</div></div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="rsev baja">BAJO</div>
+      <div class="risk-content">
+        <div style="flex:1.2"><div class="rname">Entrada de competidores locales</div><div class="rdesc">Nuevos actores que repliquen el modelo en la Región Valles</div></div>
+        <div style="flex:2"><div style="font-size:10px;font-weight:700;color:var(--yellow);margin-bottom:3px">PLAN DE CONTINGENCIA</div><div class="rplan">Construcción de reputación y cartera desde el Año 1 · Ventaja de ser primeros · Biblioteca de módulos como barrera técnica difícil de replicar</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="snum">19 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 20 · INDICADORES FINANCIEROS ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide split">
+  <div class="sl w42 grad-bg">
+    <div class="tag">Viabilidad Financiera</div>
+    <div class="h1">Los números<br><span>respaldan</span><br>el proyecto</div>
+    <div class="yline"></div>
+    <ul class="check-list" style="margin-top:8px">
+      <li>VPN positivo a 3 años con descuento del 20%</li>
+      <li>TIR alta — sector software tiene márgenes elevados</li>
+      <li>Punto de equilibrio antes del mes 8</li>
+      <li>Relación Beneficio/Costo superior a 4.8x</li>
+    </ul>
+  </div>
+  <div class="sr">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="stat" style="text-align:center">
+        <div class="big" style="font-size:34px">Mes 7–8</div>
+        <div class="lbl">Punto de equilibrio operativo</div>
+      </div>
+      <div class="stat" style="text-align:center">
+        <div class="big" style="font-size:34px">>$430K</div>
+        <div class="lbl">VPN a 3 años (tasa 20%)</div>
+      </div>
+      <div class="stat" style="text-align:center">
+        <div class="big" style="font-size:34px">4.8x</div>
+        <div class="lbl">Relación Beneficio/Costo (3 años)</div>
+      </div>
+      <div class="stat" style="text-align:center">
+        <div class="big" style="font-size:34px">~18m</div>
+        <div class="lbl">Recuperación de la inversión inicial</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px">
+      <h3>📊 Proyección 3 años</h3>
+      <div style="margin-top:10px">
+        <div class="bar-item">
+          <div class="bar-label"><span class="yl">Año 1 — Ingresos</span><span class="vl">$733,000</span></div>
+          <div class="bar-track"><div class="bar-fill bf-b" style="width:34%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span class="yl">Año 2 — Ingresos</span><span class="vl">$1,340,000</span></div>
+          <div class="bar-track"><div class="bar-fill bf-p" style="width:62%"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span class="yl">Año 3 — Ingresos</span><span class="vl">$2,160,000</span></div>
+          <div class="bar-track"><div class="bar-fill bf-y" style="width:100%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="snum">20 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 21 · DIFERENCIADORES ══════════════════════════ -->
+<section data-transition="slide">
+<div class="slide full">
+  <div class="tag">Por qué SoftWaves gana</div>
+  <div class="h1" style="font-size:38px">Flexibilidad + Escalabilidad = <span>Ventaja duradera</span></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px">
+    <div class="card"><div class="ci">🧩</div><h3>Arquitectura modular</h3><p>El código es reutilizable. Nuevas funciones no requieren reescribir todo. El cliente crece sin pagar de nuevo desde cero.</p></div>
+    <div class="card p"><div class="ci">📍</div><h3>Presencia local única</h3><p>Únicos en Ameca/Región Valles. Conocimiento del mercado local, soporte cara a cara cuando el cliente lo necesita.</p></div>
+    <div class="card y"><div class="ci">💰</div><h3>Modelo compra o renta</h3><p>El cliente elige según su flujo de caja. Nadie en el mercado local ofrece esta flexibilidad en el mismo paquete.</p></div>
+    <div class="card y"><div class="ci">⚡</div><h3>Entrega 60% más rápida</h3><p>Microservicios reutilizables nos permiten entregar en semanas lo que otros tardan meses. ROI inmediato para el cliente.</p></div>
+    <div class="card"><div class="ci">🤝</div><h3>Soporte continuo real</h3><p>No desaparecemos al entregar. Mantenimiento, actualizaciones y soporte técnico son parte del modelo desde el inicio.</p></div>
+    <div class="card p"><div class="ci">🤖</div><h3>IA como complemento</h3><p>Cualquier sistema puede escalar con inteligencia artificial. El cliente no necesita cambiar de proveedor cuando quiera IA.</p></div>
+  </div>
+  <div class="snum">21 / 22</div>
+</div>
+</section>
+
+<!-- ══════════════════════════ 22 · CONCLUSIÓN + CTA ══════════════════════════ -->
+<section data-transition="fade">
+<div class="slide" style="justify-content:center;align-items:center;text-align:center;background:var(--bg)">
+  <div class="geo-circle" style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+  <div class="geo-circle" style="width:700px;height:700px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(127,0,178,.08)"></div>
+  <div style="position:relative;z-index:2;max-width:720px">
+    <img src="LOGOS/logo_png_deg.png" alt="SW" style="height:70px;margin-bottom:20px;filter:drop-shadow(0 0 20px rgba(1,75,160,.5))" onerror="this.style.display='none'">
+    <div class="h1" style="font-size:52px;margin-bottom:10px">SoftWaves es la apuesta<br>por la <span>PyME mexicana</span></div>
+    <div class="yline center"></div>
+    <p class="body" style="font-size:15px;max-width:600px;margin:0 auto 32px">Un equipo sólido, un modelo de negocio validado, una inversión responsable y un mercado que nos está esperando. La tecnología que las PyMEs necesitan — ahora al alcance de la Región Valles.</p>
+    <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:40px;padding:12px 22px">
+        <span>📧</span><span style="font-size:13px;font-weight:600">softwaves.contacto@gmail.com</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:40px;padding:12px 22px">
+        <span>🌐</span><span style="font-size:13px;font-weight:600">minato97.github.io/softwaves</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:40px;padding:12px 22px">
+        <span>📍</span><span style="font-size:13px;font-weight:600">Ameca, Jalisco</span>
+      </div>
+    </div>
+  </div>
+  <div class="snum">22 / 22</div>
+</div>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn  = document.getElementById('theme-toggle');
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = '🌙 Modo oscuro';
+    document.querySelector('.reveal-viewport').style.background = 'var(--bg)';
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀️ Modo claro';
+    document.querySelector('.reveal-viewport').style.background = 'var(--bg)';
+  }
+}
+
+Reveal.initialize({
+  hash: true,
+  transition: 'slide',
+  transitionSpeed: 'default',
+  backgroundTransition: 'fade',
+  center: false,
+  width: 1280,
+  height: 720,
+  margin: 0,
+  minScale: 0.2,
+  maxScale: 2.0,
+  controls: true,
+  progress: true,
+  slideNumber: 'c/t',
+  keyboard: {
+    37: 'prev', 39: 'next',   // ← →
+    38: 'prev', 40: 'next',   // ↑ ↓
+    80: 'prev', 78: 'next',   // P N
+  },
+  touch: true,
+  overview: true,
+});
+
+// Sync theme with reveal bg
+Reveal.on('slidechanged', () => {
+  document.querySelector('.reveal-viewport').style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg');
+});
+
+// Pulse animation
+const style = document.createElement('style');
+style.textContent = '@keyframes pulse { 0%,100%{box-shadow:0 0 20px rgba(127,0,178,.5)} 50%{box-shadow:0 0 40px rgba(127,0,178,.9)} }';
+document.head.appendChild(style);
+</script>
+</body>
+</html>
